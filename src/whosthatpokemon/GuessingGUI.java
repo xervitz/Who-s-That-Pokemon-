@@ -6,6 +6,9 @@
 package whosthatpokemon;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
 import javax.swing.JLabel;
 
 /**
@@ -19,6 +22,7 @@ public class GuessingGUI extends javax.swing.JFrame {
     private JLabel[] labels = new JLabel[160];
     private int reg = 0;
     private Color green = new Color(0,255,0);
+    private Rectangle rect = new Rectangle(1000,750);
     /**
      * Creates new form GussingGUI
      */
@@ -34,7 +38,8 @@ public class GuessingGUI extends javax.swing.JFrame {
         for(int i = 0; i < win.length; i++) {
             win[i] = 0;
         }
-        int w = 118;
+        
+        int w = 120;
         int h = 15;
         int x = 15, y = 100;
         initComponents();
@@ -52,6 +57,12 @@ public class GuessingGUI extends javax.swing.JFrame {
                 y += 30;
             }
         }
+        
+        
+        this.setBounds(rect);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        
         buildLabels(0);
     }
 
@@ -76,6 +87,8 @@ public class GuessingGUI extends javax.swing.JFrame {
         alola = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(0, 23, 1000, 700));
+        setPreferredSize(new java.awt.Dimension(890, 900));
 
         kanto.setText("Kanto");
         kanto.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +177,7 @@ public class GuessingGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(guessing, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(correct, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,8 +189,7 @@ public class GuessingGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(guessing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(72, 699, Short.MAX_VALUE))
+                            .addComponent(jLabel1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(kanto)
@@ -188,8 +200,8 @@ public class GuessingGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Kalos)
                             .addComponent(unova)
-                            .addComponent(alola))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(alola))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

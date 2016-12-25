@@ -13,7 +13,7 @@ public class pokemon {
     private String name;
     private int type1 = -1;
     private int type2 = -1;
-    private String[] types = "normal,fighting,flying,poison,ground,rock,bug,ghost,steel,fire,water,grass,electric,psychic,ice,dragon,dark,fairy".split(",");
+    private String[] types = "normal,fighting,flying,poison,ground,rock,bug,ghost,steel,fire,water,grass,electric,psychic,ice,dragon,dark,fairy,variable".split(",");
     
     public pokemon(String n) {
         name = n;
